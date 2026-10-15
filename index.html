@@ -1,240 +1,84 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GlobalPrime Investments</title>
+<title>Crestmont Financial | Investor Demo</title>
+<meta name="theme-color" content="#08111f">
 <style>
-:root{--bg:#080d18;--panel:#111b2d;--line:#29364b;--gold:#d9b66d;--muted:#9baac0;--green:#39c98a}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:#f4f6fb;font:15px Arial,sans-serif}
-header{background:#101a2b;border-bottom:1px solid var(--line);padding:20px}
-.brand{color:var(--gold);font-size:25px;font-weight:800;letter-spacing:1px}
-header p{color:var(--muted);margin-bottom:0}
-nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:20px}
-a{color:#f4f6fb;text-decoration:none}
-main{max-width:1050px;margin:auto;padding:18px}
-h2{font-size:20px;margin:28px 0 12px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:18px;margin:12px 0}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.stat{font-size:25px;font-weight:bold;color:var(--gold);margin:10px 0}
-.muted{color:var(--muted);line-height:1.5}
-.pill{display:inline-block;background:#25334a;padding:6px 10px;border-radius:20px;color:var(--gold);font-size:12px}
-input,select,button{width:100%;padding:13px;margin:6px 0;border-radius:8px;font-size:15px}
-input,select{background:#080d18;color:white;border:1px solid #39465b}
-button{background:var(--gold);color:#101827;border:0;font-weight:bold;cursor:pointer}
-button.secondary{background:#26344b;color:white}
-button.danger{background:#512d38;color:#fff}
-button:active{opacity:.8}
-.row{display:flex;gap:10px}
-.row>*{flex:1;min-width:0}
-.good{color:var(--green)}
-.hidden{display:none!important}
-hr{border:0;border-top:1px solid var(--line);margin:16px 0}
-footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
-@media(max-width:600px){.grid{grid-template-columns:1fr}.brand{font-size:21px}main{padding:12px}.row{gap:6px}}
+:root{--bg:#08111f;--panel:#101d30;--panel2:#13243a;--line:#263852;--gold:#e7bd65;--text:#f4f7fb;--muted:#9aabc0;--green:#42d3a2;--red:#ff7d86}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#172b45 0,#08111f 42%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input{font:inherit}button{cursor:pointer;border:0;border-radius:11px;padding:12px 16px;font-weight:700}input{width:100%;background:#091525;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:12px;margin:6px 0 14px;outline:none}input:focus{border-color:var(--gold)}.primary{background:var(--gold);color:#1b1a16}.secondary{background:#20334c;color:var(--text);border:1px solid #344b68}.danger{background:#482832;color:#ffd8dc}.wrap{max-width:1120px;margin:auto;padding:18px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:14px 0 18px;margin-bottom:22px}.brand{font-size:22px;font-weight:850;letter-spacing:.3px;color:var(--gold)}.sub{color:var(--muted);font-size:12px}.badge{font-size:11px;border:1px solid #7e6333;color:var(--gold);border-radius:99px;padding:5px 9px;white-space:nowrap}.hero{padding:20px 0 10px}.hero h1{font-size:clamp(26px,5vw,42px);line-height:1.1;margin:8px 0 12px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}.card{background:linear-gradient(145deg,var(--panel),#0c1727);border:1px solid var(--line);border-radius:17px;padding:18px;min-width:0}.span12{grid-column:span 12}.span8{grid-column:span 8}.span7{grid-column:span 7}.span6{grid-column:span 6}.span5{grid-column:span 5}.span4{grid-column:span 4}.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}.big{font-size:clamp(24px,4vw,34px);font-weight:800;margin-top:7px}.gold{color:var(--gold)}h2{font-size:18px;margin:0 0 14px}h3{font-size:15px;margin:0 0 8px}p{margin:7px 0 12px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.rowwrap{display:flex;gap:9px;flex-wrap:wrap}.coin{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);gap:12px}.coin:last-child{border:0}.coin strong{display:block}.price{font-weight:750;text-align:right}.up{color:var(--green)}.down{color:var(--red)}.hidden{display:none!important}.authbox{max-width:470px;margin:34px auto}.authbox .card{padding:24px}.note{font-size:12px;color:var(--muted)}.notice{border:1px solid #6c5733;background:#2a2418;color:#f7dfab;border-radius:12px;padding:12px;font-size:12px;margin:14px 0}.status{font-size:13px;margin:8px 0;color:var(--gold);min-height:20px}.tabs{display:flex;gap:8px;margin-bottom:16px}.tabs button{flex:1}.tableline{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.footer{padding:28px 0;color:var(--muted);font-size:12px;text-align:center}.tiny{font-size:11px;color:var(--muted)}@media(max-width:700px){.span8,.span7,.span6,.span5,.span4{grid-column:span 12}.top{align-items:flex-start}.wrap{padding:14px}.top .rowwrap{justify-content:flex-end}}
 </style>
 </head>
 <body>
-<header>
-<div class="brand">GLOBALPRIME INVESTMENTS</div>
-<p>Digital Asset Dashboard · Practice Environment</p>
-<nav>
-<a href="#overview">Overview</a>
-<a href="#markets">Markets</a>
-<a href="#signals">Signals</a>
-<a href="#plans">Plans</a>
-<a href="#rewards">Rewards</a>
-<a href="#profile">Profile</a>
-<a href="#admin">Demo Admin</a>
-</nav>
-</header>
+<div class="wrap">
+  <header class="top">
+    <div><div class="brand">CRESTMONT <span style="color:#fff">FINANCIAL</span></div><div class="sub">DIGITAL ASSETS · INVESTOR PORTAL</div></div>
+    <div class="rowwrap"><span class="badge">DEMO MODE</span><button id="logoutBtn" class="secondary hidden">Log out</button></div>
+  </header>
 
-<main>
-<section class="card">
-<span class="pill">DEMO ACCOUNT</span>
-<h2 style="margin-top:12px">Welcome to Crestmont</h2>
-<p class="muted">Explore a simulated investing dashboard. No real money or cryptocurrency transactions take place.</p>
-</section>
+  <section id="authSection" class="authbox">
+    <div class="hero"><div class="label gold">Private investor portal</div><h1>Invest with clarity.</h1><p class="muted">Create an account or sign in to explore your demo portfolio.</p></div>
+    <div class="card">
+      <div class="tabs"><button id="showLogin" class="primary">Log in</button><button id="showSignup" class="secondary">Create account</button></div>
+      <form id="authForm">
+        <label for="email">Email address</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label for="password">Password</label><input id="password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required>
+        <button id="authSubmit" class="primary" type="submit" style="width:100%">Log in</button>
+      </form>
+      <div id="authStatus" class="status" role="status"></div>
+      <p class="note">Signup may require email confirmation. Check your inbox if asked.</p>
+      <div class="notice">Demo only: this site does not accept deposits or execute real trades. Demo portfolio values are stored in this browser and are not real money.</div>
+    </div>
+  </section>
 
-<section id="register" class="card">
-<h2>Create Investor Profile</h2>
-<p class="muted">Use a nickname for this local demonstration. Do not enter a real password or sensitive personal information.</p>
-<input id="investorName" placeholder="Investor display name">
-<input id="investorEmail" type="text" placeholder="Demo email (optional)">
-<button onclick="registerInvestor()">Create demo profile</button>
-<p id="registerMsg" class="muted"></p>
-</section>
-
-<section id="overview">
-<h2>Portfolio Overview</h2>
-<div class="grid">
-<div class="card"><p class="muted">Demo portfolio value</p><div class="stat" id="total">$10,000.00</div></div>
-<div class="card"><p class="muted">Demo cash balance</p><div class="stat" id="cash">$10,000.00</div></div>
-<div class="card"><p class="muted">Crypto holdings</p><div class="stat" id="holdings">$0.00</div></div>
-<div class="card"><p class="muted">Simulated profit/loss</p><div class="stat" id="pnl">$0.00</div></div>
+  <main id="appSection" class="hidden">
+    <section class="hero"><div class="label gold">Investor overview</div><h1>Welcome to your portfolio.</h1><p class="muted">Signed in as <strong id="userEmail"></strong> · Market data may be delayed or unavailable.</p></section>
+    <div class="grid">
+      <div class="card span4"><div class="label">Demo cash balance</div><div id="cashValue" class="big">$10,000.00</div><p class="note">Sample funds only · browser-local</p></div>
+      <div class="card span4"><div class="label">Demo portfolio value</div><div id="portfolioValue" class="big">$10,000.00</div><p class="note">Cash plus simulated holdings</p></div>
+      <div class="card span4"><div class="label">Demo profit / loss</div><div id="pnlValue" class="big">$0.00</div><p class="note">Compared with the initial $10,000 demo amount</p></div>
+      <div class="card span7"><div class="row"><h2>Crypto market</h2><button id="refreshPrices" class="secondary">Refresh</button></div><div id="marketList"><p class="muted">Loading market prices…</p></div><div id="marketStatus" class="tiny"></div></div>
+      <div class="card span5"><h2>Simulated trade</h2><form id="tradeForm"><label for="asset">Asset</label><select id="asset" style="width:100%;background:#091525;color:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin:6px 0 14px"><option value="bitcoin">Bitcoin (BTC)</option><option value="ethereum">Ethereum (ETH)</option><option value="solana">Solana (SOL)</option></select><label for="side">Action</label><select id="side" style="width:100%;background:#091525;color:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin:6px 0 14px"><option value="buy">Buy</option><option value="sell">Sell</option></select><label for="amount">USD amount</label><input id="amount" type="number" min="1" step="0.01" placeholder="100.00" required><button class="primary" style="width:100%" type="submit">Place demo trade</button></form><div id="tradeStatus" class="status" role="status"></div><p class="note">Trades use the latest price loaded on this page. They are simulations only.</p></div>
+      <div class="card span6"><h2>Your demo holdings</h2><div id="holdings"><p class="muted">No holdings yet.</p></div></div>
+      <div class="card span6"><h2>Recent demo activity</h2><div id="activity"><p class="muted">No activity yet.</p></div><button id="resetDemo" class="secondary" style="margin-top:14px">Reset demo portfolio</button></div>
+    </div>
+    <div class="notice">Security note: account login is handled by Supabase. Trading and balances on this page are browser-only demo data; they are not a secure ledger and must never be used to represent real investor funds.</div>
+  </main>
+  <footer class="footer">Crestmont Financial · Demo environment · No real deposits, withdrawals, or transactions</footer>
 </div>
-</section>
-
-<section id="profile">
-<h2>Investor Profile</h2>
-<div class="card">
-<div class="stat" id="profileName">Guest Investor</div>
-<p class="muted" id="profileEmail">Demo profile not registered</p>
-<p>Account type: <b>Practice investor</b></p>
-<p>Account status: <span class="good">Demo active</span></p>
-<button class="secondary" onclick="changeProfile()">Change display name</button>
-</div>
-</section>
-
-<section id="markets">
-<h2>Market Watch</h2>
-<div class="grid">
-<div class="card"><b>Bitcoin · BTC</b><div class="stat">$60,000</div><span class="muted">Sample price only</span></div>
-<div class="card"><b>Ethereum · ETH</b><div class="stat">$3,000</div><span class="muted">Sample price only</span></div>
-<div class="card"><b>Solana · SOL</b><div class="stat">$150</div><span class="muted">Sample price only</span></div>
-<div class="card"><b>Market status</b><div class="stat">DEMO</div><span class="muted">Not connected to live markets</span></div>
-</div>
-</section>
-
-<section id="signals">
-<h2>Bitcoin Signals</h2>
-<div class="card">
-<span class="pill">EDUCATIONAL EXAMPLE</span>
-<h3>BTC/USD — Market Watch</h3>
-<p>Sample reference price: <b>$60,000</b></p>
-<p>Example signal: <b>WAIT / OBSERVE</b></p>
-<p class="muted">This is a fictional example, not a live trading signal or financial advice. Signals do not guarantee profits.</p>
-</div>
-</section>
-
-<section id="plans">
-<h2>Investment Plans</h2>
-<div class="grid">
-<div class="card"><span class="pill">STARTER</span><h3>Practice Starter</h3><p class="muted">Explore the demo dashboard and sample portfolio.</p><div class="stat">$500</div><button onclick="choosePlan('Practice Starter')">Select demo plan</button></div>
-<div class="card"><span class="pill">STANDARD</span><h3>Practice Standard</h3><p class="muted">Try a larger simulated allocation.</p><div class="stat">$2,500</div><button onclick="choosePlan('Practice Standard')">Select demo plan</button></div>
-<div class="card"><span class="pill">PREMIUM</span><h3>Practice Premium</h3><p class="muted">Explore premium dashboard features.</p><div class="stat">$5,000</div><button onclick="choosePlan('Practice Premium')">Select demo plan</button></div>
-<div class="card"><span class="pill">SELECTED PLAN</span><h3 id="selectedPlan">None selected</h3><p class="muted">Selecting a plan does not deposit money or promise returns.</p></div>
-</div>
-</section>
-
-<section id="rewards">
-<h2>Bonuses & Jackpots</h2>
-<div class="grid">
-<div class="card"><span class="pill">DEMO BONUS</span><h3>Welcome Bonus</h3><p class="muted">Practice reward for exploring the dashboard.</p><div class="stat">$100</div><button onclick="claimReward('Welcome Bonus')">Claim demo bonus</button></div>
-<div class="card"><span class="pill">DEMO EVENT</span><h3>Weekly Jackpot</h3><p class="muted">A fictional reward feature. No entry fee, payment or real prize.</p><div class="stat">$500</div><button onclick="claimReward('Weekly Jackpot')">Enter demo event</button></div>
-</div>
-<p id="rewardMsg" class="muted"></p>
-</section>
-
-<section class="card">
-<h2>Practice Trade</h2>
-<select id="coin"><option value="BTC">Bitcoin (BTC)</option><option value="ETH">Ethereum (ETH)</option><option value="SOL">Solana (SOL)</option></select>
-<select id="side"><option value="buy">Buy</option><option value="sell">Sell</option></select>
-<input id="qty" type="number" min="0" step="any" placeholder="Crypto quantity">
-<p class="muted" id="quote">Order value: $0.00</p>
-<button onclick="trade()">Submit simulated trade</button>
-<p class="muted" id="tradeMsg"></p>
-</section>
-
-<section id="admin">
-<h2>Demo Admin Controls</h2>
-<div class="card">
-<span class="pill">UNSECURED FRONT-END DEMO</span>
-<p class="muted">These controls are visible to anyone who can open this public demo. Do not use them to manage real investors or real money.</p>
-<input id="adminCode" type="password" placeholder="Demo access code">
-<button class="secondary" onclick="unlockAdmin()">Open demo controls</button>
-<div id="adminPanel" class="hidden">
-<hr>
-<h3>Adjust demo cash</h3>
-<input id="cashAmount" type="number" min="0" placeholder="Amount in USD">
-<div class="row"><button onclick="adjustCash(1)">Add demo cash</button><button class="danger" onclick="adjustCash(-1)">Remove demo cash</button></div>
-<h3>Investor message preview</h3>
-<input id="messageSubject" placeholder="Message subject">
-<input id="messageText" placeholder="Message text">
-<button onclick="previewMessage()">Preview message</button>
-<p class="muted">This preview does not send email. Real email delivery requires a secure server and email provider.</p>
-<p id="messagePreview"></p>
-</div>
-</div>
-</section>
-
-<section class="card">
-<h2>Activity History</h2>
-<div id="history" class="muted">No activity yet.</div>
-</section>
-<p class="muted">GLOBALPRIME INVESTMENTS Practice Environment. 
-</main>
-<footer>GLOBALPRIME INVESTMENTS</footer>
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const prices={BTC:60000,ETH:3000,SOL:150};
-let cash=10000,positions={},realized=0,history=[],profile={name:"Guest Investor",email:""};
-let rewards=[];
-function fmt(n){return "$"+n.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})}
-function record(s){history.unshift(s);drawHistory()}
-function drawHistory(){document.getElementById("history").innerHTML=history.map(x=>"<p>"+safe(x)+"</p>").join("")||"No activity yet."}
-function safe(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function registerInvestor(){
-let n=document.getElementById("investorName").value.trim();
-if(!n){document.getElementById("registerMsg").textContent="Please enter a display name.";return}
-profile.name=n;profile.email=document.getElementById("investorEmail").value.trim();
-document.getElementById("registerMsg").textContent="Demo profile created on this device.";
-render();record("Created demo investor profile: "+n)
-}
-function changeProfile(){let n=prompt("Enter your demo display name:",profile.name);if(n&&n.trim()){profile.name=n.trim();render();record("Changed demo profile name")}}
-function choosePlan(p){document.getElementById("selectedPlan").textContent=p;record("Selected "+p+" (demo only)")}
-function claimReward(r){
-if(rewards.includes(r)){document.getElementById("rewardMsg").textContent="This demo reward was already claimed.";return}
-rewards.push(r);document.getElementById("rewardMsg").textContent=r+" recorded as a demo reward only. No real money was added.";
-record("Claimed "+r+" (demo reward only)")
-}
-function unlockAdmin(){
-if(document.getElementById("adminCode").value==="CRESTMONT-DEMO"){
-document.getElementById("adminPanel").classList.remove("hidden");
-}else{alert("Incorrect demo code. Use CRESTMONT-DEMO for this front-end demonstration. This is not secure authentication.")}
-}
-function adjustCash(dir){
-let a=Number(document.getElementById("cashAmount").value);
-if(!Number.isFinite(a)||a<=0){alert("Enter a valid amount.");return}
-if(dir<0&&a>cash){alert("Not enough demo cash.");return}
-cash+=dir*a;record((dir>0?"Admin added ":"Admin removed ")+fmt(a)+" demo cash");render()
-}
-function previewMessage(){
-let s=document.getElementById("messageSubject").value.trim(),m=document.getElementById("messageText").value.trim();
-document.getElementById("messagePreview").textContent="Email preview — "+(s||"(no subject)")+": "+(m||"(no message)");
-}
-function trade(){
-let c=document.getElementById("coin").value,q=Number(document.getElementById("qty").value),v=q*prices[c];
-if(!Number.isFinite(q)||q<=0){alert("Enter a valid quantity.");return}
-positions[c]??={q:0,cost:0};
-if(document.getElementById("side").value==="buy"){
-if(v>cash){alert("Not enough demo cash.");return}
-cash-=v;positions[c].q+=q;positions[c].cost+=v
-}else{
-if(q>positions[c].q){alert("Not enough demo coins to sell.");return}
-let basis=positions[c].cost*q/positions[c].q;
-realized+=v-basis;cash+=v;positions[c].q-=q;positions[c].cost-=basis
-}
-record("Simulated "+document.getElementById("side").value+" "+q+" "+c+" for "+fmt(v));
-document.getElementById("tradeMsg").textContent="Demo trade recorded.";render()
-}
-function render(){
-let value=0,cost=0;
-Object.keys(positions).forEach(c=>{value+=positions[c].q*prices[c];cost+=positions[c].cost});
-document.getElementById("total").textContent=fmt(cash+value);
-document.getElementById("cash").textContent=fmt(cash);
-document.getElementById("holdings").textContent=fmt(value);
-document.getElementById("pnl").textContent=fmt(value-cost+realized);
-document.getElementById("profileName").textContent=profile.name;
-document.getElementById("profileEmail").textContent=profile.email||"No demo email entered";
-let c=document.getElementById("coin"),q=Number(document.getElementById("qty").value)||0;
-document.getElementById("quote").textContent="Sample price: "+fmt(prices[c.value])+" · Order value: "+fmt(q*prices[c.value])
-}
-document.getElementById("coin").addEventListener("change",render);
-document.getElementById("qty").addEventListener("input",render);
-render();
+const SUPABASE_URL = "https://ljyhhduncwpjijuxlgqig.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_SWVjPV65W84m6MIDVKSe7A_8Oja4j7M";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+const authSection=document.getElementById("authSection"),appSection=document.getElementById("appSection");
+const authForm=document.getElementById("authForm"),authStatus=document.getElementById("authStatus");
+const authSubmit=document.getElementById("authSubmit"),showLogin=document.getElementById("showLogin"),showSignup=document.getElementById("showSignup");
+const logoutBtn=document.getElementById("logoutBtn");
+let authMode="login",prices={bitcoin:null,ethereum:null,solana:null};
+const defaults=()=>({cash:10000,holdings:{bitcoin:0,ethereum:0,solana:0},cost:{bitcoin:0,ethereum:0,solana:0},activity:[]});
+let demo=defaults();
+function storageKey(){return "crestmont-demo-"+(document.getElementById("userEmail").textContent||"guest").toLowerCase()}
+function loadDemo(){try{const saved=localStorage.getItem(storageKey());demo=saved?JSON.parse(saved):defaults()}catch(e){demo=defaults()}renderDemo()}
+function saveDemo(){try{localStorage.setItem(storageKey(),JSON.stringify(demo))}catch(e){}renderDemo()}
+function money(n){return new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}).format(Number(n)||0)}
+function setMode(mode){authMode=mode;showLogin.className=mode==="login"?"primary":"secondary";showSignup.className=mode==="signup"?"primary":"secondary";authSubmit.textContent=mode==="login"?"Log in":"Create account";document.getElementById("password").autocomplete=mode==="login"?"current-password":"new-password";authStatus.textContent=""}
+showLogin.addEventListener("click",()=>setMode("login"));showSignup.addEventListener("click",()=>setMode("signup"));
+authForm.addEventListener("submit",async e=>{e.preventDefault();authSubmit.disabled=true;authStatus.textContent="Please wait…";const email=document.getElementById("email").value.trim();const password=document.getElementById("password").value;try{let result;if(authMode==="signup"){result=await supabaseClient.auth.signUp({email,password});if(!result.error&&result.data.user&&!result.data.session){authStatus.textContent="Account created. Check your email to confirm, then log in.";return}}else{result=await supabaseClient.auth.signInWithPassword({email,password})}if(result.error)throw result.error;authStatus.textContent="";await showApp(result.data.user)}catch(err){authStatus.textContent=err.message||"Something went wrong. Please try again."}finally{authSubmit.disabled=false}});
+async function showApp(user){if(!user)return;document.getElementById("userEmail").textContent=user.email||"Investor";authSection.classList.add("hidden");appSection.classList.remove("hidden");logoutBtn.classList.remove("hidden");loadDemo();await fetchPrices()}
+async function showAuth(){authSection.classList.remove("hidden");appSection.classList.add("hidden");logoutBtn.classList.add("hidden")}
+logoutBtn.addEventListener("click",async()=>{await supabaseClient.auth.signOut();await showAuth()});
+supabaseClient.auth.getSession().then(({data})=>{if(data.session)showApp(data.session.user)});
+supabaseClient.auth.onAuthStateChange((_event,session)=>{if(session)showApp(session.user);else showAuth()});
+const assetNames={bitcoin:"Bitcoin (BTC)",ethereum:"Ethereum (ETH)",solana:"Solana (SOL)"};
+async function fetchPrices(){const market=document.getElementById("marketList"),status=document.getElementById("marketStatus");status.textContent="Fetching latest available public prices…";try{const r=await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd&include_24hr_change=true",{cache:"no-store"});if(!r.ok)throw new Error("Price service temporarily unavailable.");const data=await r.json();for(const id of Object.keys(prices)){if(data[id]&&Number(data[id].usd)>0)prices[id]={usd:Number(data[id].usd),change:Number(data[id].usd_24h_change)||0}}renderMarket();status.textContent="Prices provided by CoinGecko public API. They can be delayed or rate-limited."}catch(e){status.textContent="Live prices could not be loaded. Try Refresh later.";renderMarket()}}
+function renderMarket(){const market=document.getElementById("marketList");market.innerHTML=Object.keys(assetNames).map(id=>{const p=prices[id];return `<div class="coin"><div><strong>${assetNames[id]}</strong><span class="tiny">${id.toUpperCase()}</span></div><div class="price">${p?money(p.usd):"Unavailable"}<div class="${p&&p.change>=0?"up":"down"} tiny">${p?(p.change>=0?"+":"")+p.change.toFixed(2)+"% (24h)":""}</div></div></div>`}).join("")}
+document.getElementById("refreshPrices").addEventListener("click",fetchPrices);
+function renderDemo(){const total=Object.keys(demo.holdings).reduce((sum,id)=>sum+(demo.holdings[id]||0)*(prices[id]?.usd||0),0);const pnl=demo.cash+total-10000;document.getElementById("cashValue").textContent=money(demo.cash);document.getElementById("portfolioValue").textContent=money(demo.cash+total);const pnlEl=document.getElementById("pnlValue");pnlEl.textContent=(pnl>=0?"+":"")+money(pnl);pnlEl.className="big "+(pnl>=0?"up":"down");document.getElementById("holdings").innerHTML=Object.keys(assetNames).map(id=>`<div class="tableline"><span>${assetNames[id]}</span><span>${(demo.holdings[id]||0).toFixed(8)}<br><span class="tiny">${money((demo.holdings[id]||0)*(prices[id]?.usd||0))}</span></span></div>`).join("");document.getElementById("activity").innerHTML=demo.activity.length?demo.activity.slice(0,8).map(a=>`<div class="tableline"><span>${a.side.toUpperCase()} ${a.asset.toUpperCase()}<br><span class="tiny">${a.date}</span></span><strong>${money(a.amount)}</strong></div>`).join(""):'<p class="muted">No activity yet.</p>'}
+document.getElementById("tradeForm").addEventListener("submit",e=>{e.preventDefault();const id=document.getElementById("asset").value,side=document.getElementById("side").value,amount=Number(document.getElementById("amount").value),p=prices[id],status=document.getElementById("tradeStatus");if(!p||!p.usd){status.textContent="Price unavailable. Refresh market prices first.";return}if(!Number.isFinite(amount)||amount<=0){status.textContent="Enter a valid USD amount.";return}const units=amount/p.usd;if(side==="buy"){if(amount>demo.cash){status.textContent="Not enough demo cash for this trade.";return}demo.cash-=amount;demo.holdings[id]=(demo.holdings[id]||0)+units;demo.cost[id]=(demo.cost[id]||0)+amount}else{if(units>(demo.holdings[id]||0)){status.textContent="Not enough demo holdings to sell this amount.";return}demo.holdings[id]-=units;demo.cash+=amount;demo.cost[id]=Math.max(0,(demo.cost[id]||0)-amount)}demo.activity.unshift({side,asset:id,amount,date:new Date().toLocaleString()});demo.activity=demo.activity.slice(0,30);saveDemo();status.textContent=`Demo ${side} completed: ${units.toFixed(8)} ${id.toUpperCase()}. No real transaction occurred.`;document.getElementById("amount").value=""});
+document.getElementById("resetDemo").addEventListener("click",()=>{if(confirm("Reset this browser's demo portfolio to $10,000 sample cash?")){demo=defaults();saveDemo();document.getElementById("tradeStatus").textContent="Demo portfolio reset."}});
 </script>
 </body>
 </html>
